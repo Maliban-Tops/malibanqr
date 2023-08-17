@@ -1,104 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Maliban QR</title>
-  <meta name="description" content="demo for kjua (https://larsjung.de/kjua/)">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Maliban QR</title>
+    <meta
+      name="description"
+      content="demo for kjua (https://larsjung.de/kjua/)"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="//fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="container">
+      <ngx-kjua
+        [text]="text"
+        [render]="render"
+        [crisp]="crisp"
+        [minVersion]="minVersion"
+        [ecLevel]="ecLevel"
+        [size]="size"
+        [ratio]="ratio"
+        [fill]="fill"
+        [back]="back"
+        [rounded]="rounded"
+        [quiet]="quiet"
+        [mode]="mode"
+        [mSize]="[mSize, mSize2]"
+        [mPosX]="[mPosX, mPosX2]"
+        [mPosY]="[mPosY, mPosY2]"
+        [label]="label"
+        [fontname]="fontname"
+        [fontcolor]="fontcolor"
+        [fontoutline]="fontoutline"
+        [image]="image"
+        [imageAsCode]="imageAsCode"
+        [elementId]="elementId"
+      ></ngx-kjua>
+    </div>
 
-</head>
-<body>
-<div id="container">
-  <ngx-kjua
-    [text]="text"
-    [render]="render"
-    [crisp]="crisp"
-    [minVersion]="minVersion"
-    [ecLevel]="ecLevel"
-    [size]="size"
-    [ratio]="ratio"
-    [fill]="fill"
-    [back]="back"
-    [rounded]="rounded"
-    [quiet]="quiet"
-    [mode]="mode"
-    [mSize]="[mSize, mSize2]"
-    [mPosX]="[mPosX,mPosX2]"
-    [mPosY]="[mPosY,mPosY2]"
-    [label]="label"
-    [fontname]="fontname"
-    [fontcolor]="fontcolor"
-    [fontoutline]="fontoutline"
-    [image]="image"
-    [imageAsCode]="imageAsCode"
-    [elementId]="elementId"
-  ></ngx-kjua>
-</div>
-<div class="control left"><a id="banner" href="#">Maliban QR</a>
-  <hr>
-  <!-- <div class="form-group">
-    <label for="render">RENDER MODE</label>
-    <select id="render" [(ngModel)]="render" class="form-control">
-      <option value="image" selected="selected">image</option>
-      <option value="canvas">canvas</option>
-      <option value="svg">svg</option>
-    </select>
-  </div> -->
-  <!-- <div class="form-group">
-      <label for="crisp">CRISP</label>
-    <select id="crisp" [(ngModel)]="crisp" class="form-control">
-      <option value="true" selected="selected">true</option>
-      <option value="false">false</option>
-    </select>
-  </div> -->
-  <hr>
-  <!-- <div class="form-group">
-    <label for="size">SIZE: {{size}}px</label>
-    <input id="size" type="range" value="400" min="100" max="1000" step="50" [(ngModel)]="size" class="form-control-input">
-  </div> -->
-  <!-- <div class="form-group">
-    <label for="fill">FILL</label>
-    <input id="fill" type="color" value="#333333" [(ngModel)]="fill" class="form-control">
-  </div> -->
-  <!-- <div class="form-group">
-    <label for="back">BACK</label>
-    <input id="back" type="text" value="#ffffff" [(ngModel)]="back" class="form-control-input">
-  </div> -->
-  <div class="form-group">
-   <label for="text">CONTENT</label>
-    <textarea id="text" [(ngModel)]="text" class="form-control-input"></textarea>
-  </div>
-  <hr>
+    <div class="control left">
+      <a id="banner" href="#">Maliban QR</a>
+      <hr />
+      <div class="form-group">
+        <label for="render">RENDER MODE</label>
+        <select id="render" [(ngModel)]="render" class="form-control">
+          <option value="image" selected="selected">image</option>
+          <option value="canvas">canvas</option>
+          <option value="svg">svg</option>
+        </select>
+      </div>
+      <!-- <div class="form-group">
+        <label for="crisp">CRISP</label>
+        <select id="crisp" [(ngModel)]="crisp" class="form-control">
+          <option value="true" selected="selected">true</option>
+          <option value="false">false</option>
+        </select>
+      </div> -->
+      <hr />
+      <div class="form-group">
+        <label for="size">SIZE: {{ size }}px</label>
+        <input
+          id="size"
+          type="range"
+          value="400"
+          min="100"
+          max="1000"
+          step="50"
+          [(ngModel)]="size"
+          class="form-control-input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="fill">FILL</label>
+        <input
+          id="fill"
+          type="color"
+          value="#333333"
+          [(ngModel)]="fill"
+          class="form-control"
+        />
+      </div>
+      <div class="form-group">
+        <label for="back">BACK</label>
+        <input
+          id="back"
+          type="text"
+          value="#ffffff"
+          [(ngModel)]="back"
+          class="form-control-input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="text">CONTENT</label>
+        <textarea
+          id="text"
+          [(ngModel)]="text"
+          class="form-control-input"
+        ></textarea>
+      </div>
+      <hr />
 
-  <!-- <div class="form-group">
-    <label for="minversion">MIN VERSION: {{minVersion}}</label>
-    <input id="minversion" type="range" value="1" min="1" max="10" step="1" [(ngModel)]="minVersion" class="form-control-input">
-  </div> -->
-  <!-- <div class="form-group">
-    <label for="eclevel">ERROR CORRECTION LEVEL</label>
-    <select id="eclevel" [(ngModel)]="ecLevel" class="form-control">
-      <option value="L">L - low (7%)</option>
-      <option value="M">M - medium (15%)</option>
-      <option value="Q">Q - quartile (25%)</option>
-      <option value="H" selected="selected">H - high (30%)</option>
-    </select>
-  </div> -->
-  <!-- <div class="form-group">
-    <label for="quiet">QUIET ZONE: {{quiet}} modules</label>
-    <input id="quiet" type="range" value="1" min="0" max="40" step="1" [(ngModel)]="quiet" class="form-control-input">
-  </div>
-  <div class="form-group">
-    <label for="rounded">ROUNDED CORNERS: {{rounded}}%</label>
-    <input id="rounded" type="range" value="100" min="0" max="100" step="10" [(ngModel)]="rounded" class="form-control-input">
-  </div> -->
-  <!-- <div class="form-group">
-    <label for="elementId">ELEMENT-ID</label>
-    <textarea id="elementId" [(ngModel)]="elementId" class="form-control-input"></textarea>
-  </div> -->
-</div>
-<!-- <div class="control right"><label for="mode">MODE</label>
+      <div class="form-group">
+        <label for="minversion">MIN VERSION: {{ minVersion }}</label>
+        <input
+          id="minversion"
+          type="range"
+          value="1"
+          min="1"
+          max="10"
+          step="1"
+          [(ngModel)]="minVersion"
+          class="form-control-input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="eclevel">ERROR CORRECTION LEVEL</label>
+        <select id="eclevel" [(ngModel)]="ecLevel" class="form-control">
+          <option value="L">L - low (7%)</option>
+          <option value="M">M - medium (15%)</option>
+          <option value="Q">Q - quartile (25%)</option>
+          <option value="H" selected="selected">H - high (30%)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="quiet">QUIET ZONE: {{ quiet }} modules</label>
+        <input
+          id="quiet"
+          type="range"
+          value="1"
+          min="0"
+          max="40"
+          step="1"
+          [(ngModel)]="quiet"
+          class="form-control-input"
+        />
+      </div>
+      <div class="form-group">
+        <label for="rounded">ROUNDED CORNERS: {{ rounded }}%</label>
+        <input
+          id="rounded"
+          type="range"
+          value="100"
+          min="0"
+          max="100"
+          step="10"
+          [(ngModel)]="rounded"
+          class="form-control-input"
+        />
+      </div>
+      <!-- <div class="form-group">
+        <label for="elementId">ELEMENT-ID</label>
+        <textarea
+          id="elementId"
+          [(ngModel)]="elementId"
+          class="form-control-input"
+        ></textarea>
+      </div> -->
+    </div>
+    <!-- <div class="control right"><label for="mode">MODE</label>
   <select id="mode" [(ngModel)]="mode">
   <option value="plain">plain</option>
   <option value="label" selected="selected">label</option>
@@ -130,11 +190,12 @@
   <label for="image-as-code">IMAGE-AS-CODE</label><input id="image-as-code" [(ngModel)]="imageAsCode" type="checkbox">
 </div> -->
 
-<div class="logo">
-  <img  src="assets/logo.png" alt="" srcset="">
-  <h1> Maliban QR Server </h1>
-</div>
-<!--
+    <div class="logo">
+      <img src="assets/logo.png" alt="" srcset="" />
+      <h1>Maliban QR Server</h1>
+      <p>Ver 1.0</p>
+    </div>
+    <!--
 <img id="img-buffer" src="assets/dummy.png" #imgBuffer> -->
-</body>
+  </body>
 </html>

@@ -8,7 +8,7 @@
 body {
   font-family: "Ubuntu", "Arial", "sans";
   text-align: center;
-  background: repeat url("assets/bg.jpg");
+  background: #4e8ace;
 }
 
 .control.left, .control.right {
@@ -71,4 +71,16 @@ body {
     z-index: 1000;
     width: 500px;
     height: auto;
+    color: #1d3fa0;
+}
+
+.logo p{
+  display: block;
+    position: absolute;
+    right: 1px;
+    bottom: 20px;
+    z-index: 1000;
+    width: 500px;
+    height: auto;
+    color: #fff;
 }

@@ -10,7 +10,8 @@ import {
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
 })
-export class AppComponent implements AfterViewInit {
+
+export class AppComponent{
   text: string | any = "";
   render: KjuaRender = "image";
   crisp = true;
@@ -37,16 +38,10 @@ export class AppComponent implements AfterViewInit {
   imageText = "";
   imgNativeElement = undefined;
   elementId = "";
+  qrCodeImageSrc: string = '';
 
   @ViewChild("imgBuffer")
   imageElement!: ElementRef;
-
-  ngAfterViewInit(): void {
-    setTimeout(
-      () => (this.imgNativeElement = this.imageElement.nativeElement),
-      500
-    );
-  }
 
   /**
    * Not perfect, I know
@@ -64,7 +59,9 @@ export class AppComponent implements AfterViewInit {
     }
   }
 
-  
+  updateQRCodeImageSource(src: string) {
+    this.qrCodeImageSrc = src;
+  }
 
   get image() {
     if (!!this.imageText && this.imageText.length > 0) {
